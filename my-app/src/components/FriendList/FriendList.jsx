@@ -1,15 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styles from "./FriendList.module.css";
-import clsx from "clsx";
+import React from 'react';
+import PropTypes from 'prop-types';
+import clsx from 'clsx';
+import styles from './FriendList.module.css';
 
 const FriendList = ({ friends }) => (
   <ul className={styles.friendList}>
     {friends.map(({ avatar, name, isOnline, id }) => (
       <li className={styles.item} key={id}>
-        <span
-          className={clsx(styles.status, isOnline && styles.isActive)}
-        ></span>
+        <span className={clsx(styles.status, isOnline && styles.isActive)} />
         <img
           className={styles.avatar}
           src={avatar}
@@ -27,8 +25,8 @@ FriendList.propTypes = {
       avatar: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       isOnline: PropTypes.bool.isRequired,
-      id: PropTypes.number.isRequired
-    })
-  )
+      id: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
 };
 export default FriendList;

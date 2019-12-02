@@ -14,7 +14,7 @@ import transactionHistoryData from '../../JSON/transactions.json';
 
 const App = () => (
   <>
-    <Profile {...userData} />
+    <Profile user={userData} />
     <Statistics title="File upload" stats={statisticalData} />
     <FriendList friends={friendsData} />
     <TransactionHistory transactions={transactionHistoryData} />
